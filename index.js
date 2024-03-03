@@ -1,9 +1,9 @@
 import { Telegraf, Markup, Telegram } from "telegraf";
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
-import { handlerActionUser } from "./actionButton/actionInlineKeyboard.js";
-import { matchNames, matchNamesSpecifics } from "../utils/util.js";
-import { listNames } from "./fakeDb/fakeDb.js";
+import { handlerActionUser } from "./server/telegram/actionButton/actionInlineKeyboard.js";
+import { matchNames, matchNamesSpecifics } from "./server/utils/util.js";
+import { listNames } from "./server/telegram/fakeDb/fakeDb.js";
 import express from "express";
 
 const config = {
@@ -20,6 +20,7 @@ const bot = new Telegraf(config.token);
 const tg = new Telegram(config.token);
 
 app.get('/',(req,res)=>{
+  console.log('all work')
   res.send('Hi bro!!!')
 })
 app.post('/bot', (req,res)=>{
