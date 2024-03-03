@@ -1,9 +1,9 @@
 import { Telegraf, Markup, Telegram } from "telegraf";
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
-import { handlerActionUser } from "./server/telegram/actionButton/actionInlineKeyboard.js";
-import { matchNames, matchNamesSpecifics } from "./server/utils/util.js";
-import { listNames } from "./server/telegram/fakeDb/fakeDb.js";
+import { handlerActionUser } from "./telegram/actionButton/actionInlineKeyboard.js";
+import { matchNames, matchNamesSpecifics } from "./utils/util.js";
+import { listNames } from "./telegram/fakeDb/fakeDb.js";
 import express from "express";
 
 const config = {
@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 app.post('/bot', (req,res)=>{
   console.log(req);
   const { body } = req;
-  bot.processUpdate(body)
+  // bot.processUpdate(body)
   res.status(200);
 })
 
@@ -102,3 +102,6 @@ app.listen(PORT, ()=>console.log(`Server start on PORT ${PORT}`))
 
 
 // ctx.replyWithPhoto({ source: img })
+
+
+export default app;
