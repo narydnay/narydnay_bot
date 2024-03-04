@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Bot for find cards prisoner, change evry day information about situation kik-camp",
   "main": "./src/app.js",
-  "type": "module",
   "scripts": {
     "dev": "nodemon ./src/app.js",
     "start": "node ./src/app.js",

@@ -1,14 +1,8 @@
-import express from "express";
-
-const PORT = 3000;
+const express = require("express");
 const app = express();
 
-app.get('/',(req,res)=>{
-  console.log('all work')
-  res.send('Hi bro!!!')
-})
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
-app.listen(PORT, ()=>console.log(`Server start on PORT ${PORT}`))
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
-
-export default app;
+module.exports = app;
