@@ -2,12 +2,12 @@
   "name": "bot_kik_80",
   "version": "1.0.0",
   "description": "Bot for find cards prisoner, change evry day information about situation kik-camp",
-  "main": "src/app.js",
+  "main": "./src/app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/app.js",
-    "start": "node src/app.js",
-    "vercel-build": "echo hellow vercel"
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js",
+    "vercel-build": "echo hi"
   },
   "keywords": [
     "kik-80",
