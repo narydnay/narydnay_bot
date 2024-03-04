@@ -1,5 +1,6 @@
 { 
   "version": 2,
   "public": true,
+  "bulds": [{"src":"./api/index.js", "use":"@vercel/nede"}],
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }] 
 }
