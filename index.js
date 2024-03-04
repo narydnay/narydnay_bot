@@ -1,6 +1,6 @@
 import express from "express"
 
-const app = express();
+export const app = express();
 
 app.get("/", (req, res) => {
   res.send("Express on Vercel type module");
@@ -11,4 +11,3 @@ app.listen(5000, () => {
 });
 
 // Export the Express API
-export default app;
