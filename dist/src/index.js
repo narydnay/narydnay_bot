@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const admin_1 = require("./admin/controllers/admin");
+// import { routers } from './admin/controllers/admin';
 // import bodyParser from 'body-parser';
 // import { bot } from './telegram/bot';
 const server_1 = require("../config/server");
@@ -18,7 +18,10 @@ const PORT = process.env.PORT || 8000;
 // app.use(bodyParser.json())
 // bot.telegram.setWebhook(SERVER_URL + WH_PATH);
 // app.use(bot.webhookCallback(WH_PATH))
-app.use(admin_1.routers);
+// app.use(routers)
+app.get('/', (_req, res) => {
+    res.send('Router work good');
+});
 app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT} `);
 });

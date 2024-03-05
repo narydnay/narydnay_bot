@@ -14,7 +14,12 @@ const PORT = process.env.PORT || 8000;
 // app.use(bodyParser.json())
 // bot.telegram.setWebhook(SERVER_URL + WH_PATH);
 // app.use(bot.webhookCallback(WH_PATH))
-app.use(routers)
+// app.use(routers)
+
+app.get('/', (_req: Request, res: Response)=>{
+
+  res.send('Router work good')
+})
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT} `);
