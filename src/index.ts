@@ -1,5 +1,5 @@
 import express, { Request, Response} from 'express';
-import { routers } from './admin/controllers/admin';
+// import { routers } from './admin/controllers/admin';
 // import bodyParser from 'body-parser';
 // import { bot } from './telegram/bot';
 import { config } from '../config/server';
