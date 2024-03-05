@@ -1,5 +1,6 @@
 import express, { Request, Response} from 'express';
 import { Telegraf } from 'telegraf';
+import axios from 'axios';
 const TOKEN = '6884974307:AAEN0vj63vJ0ntxRoVSiqSnupPg3S2h7ymc';
 const WH_PATH = '/bot' + TOKEN;
 
@@ -9,13 +10,31 @@ const app = express();
 const PORT = 8000;
 const URL_WEBHOOK = 'https://narydnay-bot.vercel.app/';
 
+// Telegram API Configuration
+const TELEGRAM_API = `https://api.telegram.org/bot${TOKEN}`;
+const URI = `/webhook/${TOKEN}`;
+const webhookURL = `${URL_WEBHOOK}${URI}`;
+
+// configuring the bot via Telegram API to use our route below as webhook
+const setupWebhook = async () => {
+  try {
+    const { data } = await axios.get(
+      `${TELEGRAM_API}/setWebhook?url=${webhookURL}&drop_pending_updates=true`
+    );
+    console.log(data);
+  } catch (error) {
+    return error;
+  }
+};
+
 bot.on('text', ctx => {
   ctx.reply('hi bro we work good')
 })
 bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH)
 bot.launch();
 
-app.use(bot.webhookCallback(WH_PATH))
+app.use(bot.webhookCallback(WH_PATH));
+
 app.get('/', (_req: Request, res: Response)=>{
 
   res
@@ -28,6 +47,13 @@ app.post(WH_PATH, (req: Request, res: Response)=>{
   return res.status(200)
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, async() => {
   console.log(`Server is listening on ${PORT} `);
+   // setting up our webhook url on server spinup
+   try {
+    console.log(`Server is up and Running at PORT : ${PORT}`);
+    await setupWebhook();
+  } catch (error) {
+    console.log(error.message);
+  }
 })
