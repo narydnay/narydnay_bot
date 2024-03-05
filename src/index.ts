@@ -18,10 +18,15 @@ bot.launch();
 app.use(bot.webhookCallback(WH_PATH))
 app.get('/', (_req: Request, res: Response)=>{
 
-  res.send('Router work good')
+  res
+  .status(200)
+  .send('Router work good new data')
 })
 
+app.post('/bot', (req: Request, res: Response)=>{
 
+  return res.status(200)
+})
 
 app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT} `);
