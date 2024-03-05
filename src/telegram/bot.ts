@@ -24,7 +24,7 @@ bot.on('text', ctx => {
   ctx.reply('hi bro!!! :)')
 })
 
-console.log(process.env)
+// console.log(process.env)
 // if(process.env.environment == 'PRODUCTION'){
 //   const domain = 'https://narydnay-bot.vercel.app/';
 //   const port = 8000;

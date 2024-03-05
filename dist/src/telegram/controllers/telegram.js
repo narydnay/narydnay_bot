@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.botController = void 0;
-const bot_1 = require("../bot");
 const botController = {
     post: (_req, res) => {
         const { body } = _req;
-        bot_1.bot;
         return res
             .status(200)
             .send('Data recive' + JSON.stringify(body));

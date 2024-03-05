@@ -12,13 +12,14 @@ const server_1 = require("../config/server");
 const TELEGRAM_TOKEN = server_1.config.get('token-bot');
 const SERVER_URL = server_1.config.get('url-server');
 const WH_PATH = '/bot' + server_1.config.get('url-server');
+console.log({ TELEGRAM_TOKEN });
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 8000;
 app.use(body_parser_1.default.json());
+bot_1.bot.telegram.setWebhook(SERVER_URL + WH_PATH);
 app.use(bot_1.bot.webhookCallback(WH_PATH));
 app.use(admin_1.routers);
 app.listen(PORT, () => {
-    bot_1.bot.telegram.setWebhook(SERVER_URL + WH_PATH);
     console.log(`Server is listening on ${PORT} `);
 });
 //# sourceMappingURL=index.js.map

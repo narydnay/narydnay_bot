@@ -7,15 +7,15 @@ import { config } from '../config/server';
 const TELEGRAM_TOKEN = config.get('token-bot');
 const SERVER_URL = config.get('url-server');
 const WH_PATH = '/bot' + config.get('url-server');
-
+console.log({TELEGRAM_TOKEN})
 const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json())
+bot.telegram.setWebhook(SERVER_URL + WH_PATH);
 app.use(bot.webhookCallback(WH_PATH))
 app.use(routers)
 
 app.listen(PORT, () => {
-  bot.telegram.setWebhook(SERVER_URL + WH_PATH);
   console.log(`Server is listening on ${PORT} `);
 })
