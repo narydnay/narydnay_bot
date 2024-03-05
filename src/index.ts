@@ -12,8 +12,8 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json())
-bot.telegram.setWebhook(SERVER_URL + WH_PATH);
-app.use(bot.webhookCallback(WH_PATH))
+// bot.telegram.setWebhook(SERVER_URL + WH_PATH);
+// app.use(bot.webhookCallback(WH_PATH))
 app.use(routers)
 
 app.listen(PORT, () => {
