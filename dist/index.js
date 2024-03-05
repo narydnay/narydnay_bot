@@ -22,7 +22,7 @@ app.get('/', (_req, res) => {
         .status(200)
         .send('Router work good new data');
 });
-app.post('/bot', (req, res) => {
+app.post(WH_PATH, (req, res) => {
     return res.status(200);
 });
 app.listen(PORT, () => {

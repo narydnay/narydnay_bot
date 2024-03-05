@@ -23,7 +23,7 @@ app.get('/', (_req: Request, res: Response)=>{
   .send('Router work good new data')
 })
 
-app.post('/bot', (req: Request, res: Response)=>{
+app.post(WH_PATH, (req: Request, res: Response)=>{
 
   return res.status(200)
 })
