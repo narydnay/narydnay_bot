@@ -38,13 +38,7 @@ const webhookURL = `${URL_WEBHOOK}${URI}`;
 bot.on('text', ctx => {
     ctx.reply('hi bro we work good');
 });
-// bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH)
-bot.launch({
-    webhook: {
-        domain: URL_WEBHOOK,
-        port: 443
-    }
-});
+bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH);
 app.get('/', (_req, res) => {
     res
         .sendStatus(200)
@@ -55,6 +49,7 @@ app.post(WH_PATH, (req, res) => {
     // bot.webhookCallback(WH_PATH)
     return res.sendStatus(200);
 });
+app.use(bot.webhookCallback(WH_PATH));
 app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is listening on ${PORT} `);
     // setting up our webhook url on server spinup
