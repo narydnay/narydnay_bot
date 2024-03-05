@@ -41,7 +41,8 @@ app.get('/', (_req: Request, res: Response)=>{
 })
 
 app.post(WH_PATH, (req: Request, res: Response)=>{
-
+  const { body } = req;
+  bot.webhookCallback(WH_PATH)
   return res.status(200)
 })
 

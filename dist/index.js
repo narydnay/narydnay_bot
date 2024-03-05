@@ -46,6 +46,8 @@ app.get('/', (_req, res) => {
         .send('Router work good new data');
 });
 app.post(WH_PATH, (req, res) => {
+    const { body } = req;
+    bot.webhookCallback(WH_PATH);
     return res.status(200);
 });
 app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
