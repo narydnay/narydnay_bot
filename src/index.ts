@@ -1,7 +1,7 @@
 import express, { Request, Response} from 'express';
 import { routers } from './admin/controllers/admin';
-import bodyParser from 'body-parser';
-import { bot } from './telegram/bot';
+// import bodyParser from 'body-parser';
+// import { bot } from './telegram/bot';
 import { config } from '../config/server';
 // Telegram API Configuration
 const TELEGRAM_TOKEN = config.get('token-bot');
@@ -11,7 +11,7 @@ console.log({TELEGRAM_TOKEN})
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 // bot.telegram.setWebhook(SERVER_URL + WH_PATH);
 // app.use(bot.webhookCallback(WH_PATH))
 app.use(routers)
