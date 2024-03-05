@@ -42,13 +42,13 @@ bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH);
 bot.launch();
 app.get('/', (_req, res) => {
     res
-        .status(200)
+        .sendStatus(200)
         .send('Router work good new data');
 });
 app.post(WH_PATH, (req, res) => {
     const { body } = req;
     bot.webhookCallback(WH_PATH);
-    return res.status(200);
+    return res.sendStatus(200);
 });
 app.listen(PORT, () => __awaiter(void 0, void 0, void 0, function* () {
     console.log(`Server is listening on ${PORT} `);

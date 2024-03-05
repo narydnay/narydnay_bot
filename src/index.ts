@@ -36,14 +36,14 @@ bot.launch();
 app.get('/', (_req: Request, res: Response)=>{
 
   res
-  .status(200)
+  .sendStatus(200)
   .send('Router work good new data')
 })
 
 app.post(WH_PATH, (req: Request, res: Response)=>{
   const { body } = req;
   bot.webhookCallback(WH_PATH)
-  return res.status(200)
+  return res.sendStatus(200)
 })
 
 app.listen(PORT, async() => {
