@@ -11,6 +11,7 @@ const PORT = 8000;
 bot.on('text', ctx => {
     ctx.reply('hi bro we work good');
 });
+bot.launch();
 app.get('/', (_req, res) => {
     res.send('Router work good');
 });
