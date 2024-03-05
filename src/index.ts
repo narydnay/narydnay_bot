@@ -8,7 +8,7 @@ const bot = new Telegraf(TOKEN);
 
 const app = express();
 const PORT = 8000;
-const URL_WEBHOOK = 'https://narydnay-bot.vercel.app/';
+const URL_WEBHOOK = 'https://narydnay-bot.vercel.app';
 
 // Telegram API Configuration
 const TELEGRAM_API = `https://api.telegram.org/bot${TOKEN}`;
@@ -32,8 +32,6 @@ bot.on('text', ctx => {
 })
 bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH)
 bot.launch();
-
-app.use(bot.webhookCallback(WH_PATH));
 
 app.get('/', (_req: Request, res: Response)=>{
 
