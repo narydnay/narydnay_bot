@@ -42,7 +42,7 @@ bot.on('text', ctx => {
 bot.launch({
     webhook: {
         domain: URL_WEBHOOK,
-        port: PORT
+        port: 433
     }
 });
 app.get('/', (_req, res) => {
