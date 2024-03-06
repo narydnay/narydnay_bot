@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const telegraf_1 = require("telegraf");
-const config_1 = require("../config/config");
+const config_1 = require("./config/config");
 const TOKEN = config_1.config.get('token-bot');
 const URL_WEBHOOK = config_1.config.get('host');
 const WH_PATH = '/bot' + TOKEN;

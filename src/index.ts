@@ -1,7 +1,7 @@
 import express, { Request, Response} from 'express';
 import path from 'path';
 import { Telegraf } from 'telegraf';
-import { config } from '../config/config';
+import { config } from './config/config';
 
 
 const TOKEN = config.get('token-bot');
