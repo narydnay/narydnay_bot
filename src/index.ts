@@ -14,6 +14,8 @@ const app = express();
 const PORT = 8000;
 
 console.log({config: config.get('host')})
+
+
 bot.on('text', ctx => {
   ctx.reply('hi bro we work good ...? plus add new info')
 })
@@ -21,7 +23,7 @@ bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH)
 
 app.get('/', async (_req: Request, res: Response)=>{
    const dataBot = await bot.telegram.getMe()
-  res.send(JSON.stringify({deploy: 4,...dataBot}, null, 4  ))
+  res.send(JSON.stringify({deploy: 5,...dataBot}, null, 4  ))
 });
 
 app.use(bot.webhookCallback(WH_PATH))

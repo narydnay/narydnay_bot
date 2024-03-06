@@ -23,12 +23,12 @@ const app = (0, express_1.default)();
 const PORT = 8000;
 console.log({ config: config_1.config.get('host') });
 bot.on('text', ctx => {
-    ctx.reply('hi bro we work good ...?' + );
+    ctx.reply('hi bro we work good ...? plus add new info');
 });
 bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH);
 app.get('/', (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const dataBot = yield bot.telegram.getMe();
-    res.send(JSON.stringify(Object.assign({ deploy: 4 }, dataBot), null, 4));
+    res.send(JSON.stringify(Object.assign({ deploy: 5 }, dataBot), null, 4));
 }));
 app.use(bot.webhookCallback(WH_PATH));
 app.listen(PORT, () => {
