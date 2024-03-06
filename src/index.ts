@@ -1,10 +1,12 @@
 import express, { Request, Response} from 'express';
 import { Telegraf } from 'telegraf';
-import { config } from './config/config';
+// import { config } from './config/config';
 
 
-const TOKEN = config.get('token-bot');
-const URL_WEBHOOK = config.get('host');
+const TOKEN = '6884974307:AAEN0vj63vJ0ntxRoVSiqSnupPg3S2h7ymc';
+const URL_WEBHOOK = 'https://narydnay-bot.vercel.app';
+// const TOKEN = config.get('token-bot');
+// const URL_WEBHOOK = config.get('host');
 const WH_PATH = '/bot' + TOKEN;
 
 export const bot = new Telegraf(TOKEN);
@@ -12,7 +14,7 @@ export const bot = new Telegraf(TOKEN);
 const app = express();
 const PORT = 8000;
 
-console.log({config: config.get('host')})
+// console.log({config: config.get('host')})
 bot.on('text', ctx => {
   ctx.reply('hi bro we work good ...? import data check')
 })
