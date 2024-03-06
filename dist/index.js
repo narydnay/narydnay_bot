@@ -23,6 +23,9 @@ exports.bot = new telegraf_1.Telegraf(TOKEN);
 const app = (0, express_1.default)();
 const PORT = 8000;
 console.log({ config: config_1.config.get('host') });
+exports.bot.on('text', ctx => {
+    ctx.reply('hi bro we work good ...? import data check');
+});
 exports.bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH);
 app.get('/', (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const dataBot = yield exports.bot.telegram.getMe();
