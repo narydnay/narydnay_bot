@@ -22,7 +22,7 @@ bot.on('text', ctx => {
 
 app.get('/', async (_req: Request, res: Response)=>{
    const dataBot = await bot.telegram.getMe()
-  res.send(JSON.stringify({deploy: 5,...dataBot}, null, 4  ))
+  res.send(JSON.stringify({deploy: 5,...dataBot}, null, 4 ))
 });
 
 app.use(bot.webhookCallback(WH_PATH))
