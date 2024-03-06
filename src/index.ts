@@ -15,7 +15,7 @@ const PORT = 8000;
 
 console.log({config: config.get('host')})
 bot.on('text', ctx => {
-  ctx.reply('hi bro we work good ...?' + )
+  ctx.reply('hi bro we work good ...?' + 'plus add new info')
 })
 bot.telegram.setWebhook(URL_WEBHOOK + WH_PATH)
 
