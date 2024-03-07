@@ -3,8 +3,8 @@ import express, { Request, Response} from 'express';
 
 const TOKEN = '6884974307:AAEN0vj63vJ0ntxRoVSiqSnupPg3S2h7ymc';
 const WH_PATH = '/bot' + TOKEN;
-
 // const bot = new Telegraf(TOKEN);
+
 
 const app = express();
 const PORT = 8000;
