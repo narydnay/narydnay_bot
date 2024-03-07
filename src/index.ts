@@ -1,10 +1,10 @@
 import express, { Request, Response} from 'express';
-import { Telegraf } from 'telegraf';
+// import { Telegraf } from 'telegraf';
 
 const TOKEN = '6884974307:AAEN0vj63vJ0ntxRoVSiqSnupPg3S2h7ymc';
 const WH_PATH = '/bot' + TOKEN;
 
-const bot = new Telegraf(TOKEN);
+// const bot = new Telegraf(TOKEN);
 
 const app = express();
 const PORT = 8000;
@@ -15,17 +15,18 @@ const TELEGRAM_API = `https://api.telegram.org/bot${TOKEN}`;
 const URI = `/webhook/${TOKEN}`;
 const webhookURL = `${URL_WEBHOOK}${URI}`;
 
-bot.on('text', ctx => {
-  ctx.reply('hi bro we work good')
-})
-bot.telegram.setWebhook('https://beige-worlds-matter.loca.lt' + WH_PATH)
+// bot.on('text', ctx => {
+//   ctx.reply('hi bro we work good')
+// })
+// bot.telegram.setWebhook('https://beige-worlds-matter.loca.lt' + WH_PATH)
 
 app.get('/', async (_req: Request, res: Response)=>{
-   const dataBot = await bot.telegram.getMe()
-  res.send(JSON.stringify(dataBot, null, 4))
+  //  const dataBot = await bot.telegram.getMe()
+  // res.send(JSON.stringify(dataBot, null, 4))
+  res.status(200).send('ok! all work')
 })
 
-app.use(bot.webhookCallback(WH_PATH))
+// app.use(bot.webhookCallback(WH_PATH))
 
 app.listen(PORT, () => {
    try {
