@@ -2,26 +2,16 @@
   "compilerOptions": {
       "module": "commonjs",
       "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "checkJs": true,
       "allowSyntheticDefaultImports": true,
-      "noFallthroughCasesInSwitch": true,
-      "removeComments": false,
       "target": "es6",
       "noImplicitAny": true,
-      "noUnusedLocals": true,
       "moduleResolution": "node",
       "sourceMap": true,
+      "outDir": "dist",
       "baseUrl": ".",
       "paths": {
-        "*": ["node_modules/*", "src/types/*"]
-      },
-      "noEmitOnError": false,
-      "declaration": true,
-      "declarationMap": true,
-      "rootDir": "./src",
-      "incremental": true,
-      "outDir": "dist",
+          "*": ["node_modules/*", "src/types/*"]
+      }
   },
   "include": ["./src/**/*"]
-}
+  }
