@@ -7,7 +7,7 @@ app.get('/', async (_req: Request, res: Response)=>{
   res.status(200).send('ok! all work')
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, (): void => {
    try {
     console.log(`Server is up and Running at PORT : ${PORT}`);
   } catch (error) {

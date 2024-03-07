@@ -1,19 +1,15 @@
 {
   "name": "bot_kik_80",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon src/index.ts",
     "build": "rimraf dist && tsc",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/narydnay/narydnay_bot.git"
